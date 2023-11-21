@@ -1,0 +1,41 @@
+<h1>main page</h1>
+<a href="api/auth/signout">signout</a>
+
+<a href="/delete">Delete account</a>
+<a href="/user/history">View History</a>
+<a href="/viewprofile?username=<%= username %>">View profile</a>
+<a href="/settings">Settings</a>
+<a href="/faqs">FAQs</a>
+
+
+<h1>
+  word:<%= word%>
+ </h1> 
+ <p>Definition:</p>
+ <ul>
+   <%for(let item of truedefinition){%>
+   <li><%=item%></li>
+ 
+   <%}%>
+ </ul>
+
+
+<h2>Antonyms</h2>
+<ul>
+  <% thesaurusResult.antonyms.slice(0, 6).forEach((antonym) => { %>
+    <li><%= antonym %></li>
+  <% }); %>
+</ul>
+<h2> Synonyms </h2>
+<ul>
+  <% thesaurusResult.synonyms.slice(0, 6).forEach((antonym) => { %>
+    <li><%= antonym %></li>
+  <% }); %>
+</ul>
+
+<h2>Rhyming Words</h2>
+<ul>
+  <% rhymeResult.slice(0,6).forEach((rhyme) => { %>
+    <li><%= rhyme %></li>
+  <% }); %>
+</ul>
